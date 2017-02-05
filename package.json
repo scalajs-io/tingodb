@@ -1,0 +1,10 @@
+{
+  "name": "tingodb-scalajs",
+  "version": "0.3.1",
+  "private": true,
+  "dependencies": {
+    "mongodb": "^2.2.22",
+    "source-map": "^0.5.6",
+    "tingodb": "^0.5.1"
+  }
+}
