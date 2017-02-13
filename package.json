@@ -1,6 +1,6 @@
 {
   "name": "tingodb-scalajs",
-  "version": "0.3.1",
+  "version": "0.5.1",
   "private": true,
   "dependencies": {
     "mongodb": "^2.2.22",

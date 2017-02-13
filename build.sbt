@@ -5,8 +5,8 @@ import sbt._
 
 import scala.language.postfixOps
 
-val apiVersion = "0.3.0.3"
-val scalaJsIOVersion = "0.3.0.3"
+val apiVersion = "0.5.1"
+val scalaJsIOVersion = "0.3.0.4-SNAPSHOT"
 val scalaJsVersion = "2.12.1"
 
 homepage := Some(url("https://github.com/scalajs.io/tingodb"))
@@ -16,7 +16,7 @@ lazy val root = (project in file(".")).
   settings(
     name := "tingodb",
     organization := "io.scalajs.npm",
-    description := "Tingodb API bindings for Scala.js",
+    description := "Embedded Node.js database upward compatible with MongoDB",
     version := apiVersion,
     scalaVersion := scalaJsVersion,
     scalacOptions ++= Seq("-deprecation", "-unchecked", "-feature", "-language:implicitConversions", "-Xlint"),
@@ -27,7 +27,7 @@ lazy val root = (project in file(".")).
       "org.scala-lang" % "scala-reflect" % scalaJsVersion,
       "org.scalatest" %%% "scalatest" % "3.0.1" % "test",
       "io.scalajs" %%% "nodejs" % scalaJsIOVersion,
-      "io.scalajs.npm" %%% "mongodb" % scalaJsIOVersion
+      "io.scalajs.npm" %%% "mongodb" % "2.2.22"
     ))
 
 /////////////////////////////////////////////////////////////////////////////////

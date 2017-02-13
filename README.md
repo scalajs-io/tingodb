@@ -1,8 +1,23 @@
 TingoDB API for Scala.js
 =======================
-This is a Scala.js type-safe binding for [tingodb](https://www.npmjs.com/package/tingodb) 
+[tingodb](https://www.npmjs.com/package/tingodb) - Embedded Node.js database upward compatible with MongoDB.
 
-Embedded Node.js database upward compatible with MongoDB.
+##### Description
+
+TingoDB is an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the API level.
+
+Upwards compatible means that if you build an app that uses functionality implemented by TingoDB 
+you can switch to MongoDB almost without code changes. This greatly reduces implementation risks 
+and give you freedom to switch to a mature solution at any moment.
+
+As a proof for upward compatibility, all tests designed to run against both MongoDB and TingoDB. 
+Moreover, significant parts of tests contributed from MongoDB nodejs driver projects and are used 
+as is without modifications.
+
+For those folks who familiar with the Mongoose.js ODM, we suggest to look at Tungus, an experimental 
+driver that allows using the famous ODM tool with our database.
+
+TingoDB can be dropin replacement for existing apps and frameworks that are based on MongoDB.
 
 #### Build Dependencies
 
@@ -32,6 +47,18 @@ $ sbt test
 #### Examples
 
 ```scala
+import io.scalajs.JSON
+import io.scalajs.nodejs.console
+import io.scalajs.nodejs.fs.Fs
+import io.scalajs.npm.mongodb.{MongoError, doc}
+import io.scalajs.npm.tingodb._
+import scala.scalajs.js
+import scala.scalajs.js.annotation.ScalaJSDefined
+  
+val dbPath = "./src/test/resources/"
+val collName = "actresses"
+val collPath = dbPath + "/" + collName  
+  
 // clear the test
 Fs.writeFileSync(collPath, "")
 
@@ -51,24 +78,23 @@ val actors = js.Array(
 collection.insert(actors, (err, result) => {
     if (err != null) console.log("err =>", err)
     else {
-      info(s"result => ${JSON.stringify(result)}")
+      console.log(s"result => ${JSON.stringify(result)}")
     
       // read the data from the database
       collection.findOne(doc("firstName" -> "Grace"), (err: MongoError, actor: Actor) => {
         if (err != null) console.log("err =>", err)
         else {
-          info(s"actor => ${JSON.stringify(actor)}")
+          console.log(s"actor => ${JSON.stringify(actor)}")
         }
       })
     }
 })
-```
 
-```scala
 @ScalaJSDefined
 class Actor(var firstName: js.UndefOr[String] = js.undefined,
-          var lastName: js.UndefOr[String] = js.undefined,
-          var age: js.UndefOr[Int] = js.undefined) extends js.Object
+            var lastName: js.UndefOr[String] = js.undefined,
+            var age: js.UndefOr[Int] = js.undefined) 
+  extends js.Object
 ```
 
 #### Artifacts and Resolvers
@@ -76,7 +102,7 @@ class Actor(var firstName: js.UndefOr[String] = js.undefined,
 To add the `tingodb` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "tingodb" % "0.3.0.3"
+libraryDependencies += "io.scalajs.npm" %%% "tingodb" % "0.5.1"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
