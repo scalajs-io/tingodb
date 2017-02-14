@@ -2,7 +2,7 @@ TingoDB API for Scala.js
 =======================
 [tingodb](https://www.npmjs.com/package/tingodb) - Embedded Node.js database upward compatible with MongoDB.
 
-##### Description
+#### Description
 
 TingoDB is an embedded JavaScript in-process filesystem or in-memory database upwards compatible with MongoDB at the API level.
 
@@ -19,18 +19,18 @@ driver that allows using the famous ODM tool with our database.
 
 TingoDB can be dropin replacement for existing apps and frameworks that are based on MongoDB.
 
-#### Build Dependencies
+### Build Dependencies
 
-* [ScalaJs.io v0.3.x](https://github.com/ldaniels528/scalajs.io)
+* [ScalaJs.io v0.3.x](https://github.com/scalajs-io/scalajs.io)
 * [SBT v0.13.13](http://www.scala-sbt.org/download.html)
 
-#### Build/publish the SDK locally
+### Build/publish the SDK locally
 
 ```bash
 $ sbt clean publish-local
 ```
 
-#### Running the tests
+### Running the tests
 
 Before running the tests the first time, you must ensure the npm packages are installed:
 
@@ -44,7 +44,7 @@ Then you can run the tests:
 $ sbt test
 ```
 
-#### Examples
+### Examples
 
 ```scala
 import io.scalajs.JSON
@@ -97,7 +97,7 @@ class Actor(var firstName: js.UndefOr[String] = js.undefined,
   extends js.Object
 ```
 
-#### Artifacts and Resolvers
+### Artifacts and Resolvers
 
 To add the `tingodb` binding to your project, add the following to your build.sbt:  
 

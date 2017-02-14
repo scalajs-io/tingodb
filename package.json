@@ -1,5 +1,5 @@
 {
-  "name": "tingodb-scalajs",
+  "name": "tingodb-sjs",
   "version": "0.5.1",
   "private": true,
   "dependencies": {
