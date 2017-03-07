@@ -1,7 +1,7 @@
 package io.scalajs.npm.tingodb
 
 import io.scalajs.RawOptions
-import io.scalajs.npm.mongodb.{Collection, CollectionOptions, Cursor, MongoAdmin, OperationResult, callbackMongoFuture}
+import io.scalajs.npm.mongodb._
 
 import scala.concurrent.Future
 import scala.scalajs.js
@@ -49,7 +49,7 @@ class Db(val databaseName: String, val options: RawOptions = js.native) extends 
   //      Methods
   /////////////////////////////////////////////////////////////////////////////////
 
-  def admin(): MongoAdmin = js.native
+  def admin(): Admin = js.native
 
   def close(): Unit = js.native
 
@@ -59,7 +59,7 @@ class Db(val databaseName: String, val options: RawOptions = js.native) extends 
 
   def collection(name: String, options: CollectionOptions | js.Any, callback: js.Function): Unit = js.native
 
-  def collectionsInfo(): Cursor = js.native
+  def collectionsInfo(): Cursor[CollectionInfo] = js.native
 
   def collectionNames(callback: js.Function): Unit = js.native
 
