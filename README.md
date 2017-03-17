@@ -102,7 +102,7 @@ class Actor(var firstName: js.UndefOr[String] = js.undefined,
 To add the `tingodb` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "tingodb" % "0.5.1-2"
+libraryDependencies += "io.scalajs.npm" %%% "tingodb" % "0.5.1-3"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:
