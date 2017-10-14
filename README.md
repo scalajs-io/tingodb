@@ -53,7 +53,7 @@ import io.scalajs.nodejs.fs.Fs
 import io.scalajs.npm.mongodb.{MongoError, doc}
 import io.scalajs.npm.tingodb._
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
   
 val dbPath = "./src/test/resources/"
 val collName = "actresses"
@@ -90,7 +90,7 @@ collection.insert(actors, (err, result) => {
     }
 })
 
-@ScalaJSDefined
+
 class Actor(var firstName: js.UndefOr[String] = js.undefined,
             var lastName: js.UndefOr[String] = js.undefined,
             var age: js.UndefOr[Int] = js.undefined) 
@@ -102,7 +102,7 @@ class Actor(var firstName: js.UndefOr[String] = js.undefined,
 To add the `tingodb` binding to your project, add the following to your build.sbt:  
 
 ```sbt
-libraryDependencies += "io.scalajs.npm" %%% "tingodb" % "0.4.1"
+libraryDependencies += "io.scalajs.npm" %%% "tingodb" % "0.4.2"
 ```
 
 Optionally, you may add the Sonatype Repository resolver:

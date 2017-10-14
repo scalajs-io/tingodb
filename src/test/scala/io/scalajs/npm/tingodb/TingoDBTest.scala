@@ -8,7 +8,7 @@ import io.scalajs.npm.tingodb.TingoDBTest.Actor
 import org.scalatest.FunSpec
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 
 /**
   * TingoDB Test
@@ -65,7 +65,7 @@ class TingoDBTest extends FunSpec {
   */
 object TingoDBTest {
 
-  @ScalaJSDefined
+
   class Actor(var firstName: js.UndefOr[String] = js.undefined,
               var lastName: js.UndefOr[String] = js.undefined,
               var age: js.UndefOr[Int] = js.undefined) extends js.Object

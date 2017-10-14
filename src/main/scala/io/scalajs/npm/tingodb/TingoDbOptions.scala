@@ -1,7 +1,7 @@
 package io.scalajs.npm.tingodb
 
 import scala.scalajs.js
-import scala.scalajs.js.annotation.ScalaJSDefined
+
 
 /**
   * TingoDB Options
@@ -21,7 +21,7 @@ import scala.scalajs.js.annotation.ScalaJSDefined
   *                        Additionally, and this might be a better approach, nested array support can be
   *                        enabled for individual indexes or search queries.
   */
-@ScalaJSDefined
+
 class TingoDbOptions(var memStore: js.UndefOr[Boolean] = js.undefined,
                      var nativeObjectID: js.UndefOr[Boolean] = js.undefined,
                      var cacheSize: js.UndefOr[Int] = js.undefined,
