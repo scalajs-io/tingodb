@@ -15,13 +15,16 @@ import scala.scalajs.js
   * @author lawrence.daniels@gmail.com
   */
 class TingoDBTest extends FunSpec {
-  val dbPath = "./src/test/resources/"
+  val dbPath = "./src/test/resources"
   val collName = "actresses"
   val collPath = dbPath + "/" + collName
 
   describe("TingoDB") {
 
     it("supports creating a local MongoDB server") {
+      // ensure the base directory
+      if(!Fs.existsSync(dbPath)) Fs.mkdirSync(dbPath)
+
       // clear the test
       Fs.writeFileSync(collPath, "")
 
